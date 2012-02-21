@@ -17,9 +17,14 @@ html, body {
 
 body {
   background-color: white;
+  /*
   font: 13.34px helvetica, arial, clean, sans-serif;
   *font-size: small;
+  */
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  color: #424037;
+  font-size: 12px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,6 +33,15 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 22px;
+
+}
+
+h2 {
+  font-size: 14px;
 }
 
 p {
@@ -90,11 +104,20 @@ ul.posts {
   color: #a00;
   font-weight: bold;
   margin-bottom: 2em;
+
 }
 
   .site .title a {
     color: #a00;
     text-decoration: none;
+    color: #999;
+    font-size: 2em;
+    
+  }
+
+  .site .title .description{
+    color: #999;
+    font-size: 16px;
   }
 
   .site .title a:hover {
@@ -195,3 +218,17 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+
+ #post pre {
+    background: #F7F7ED;
+    border: 1px solid #DFE0CD;
+    border-bottom-left-radius: 5px 5px;
+    border-bottom-right-radius: 5px 5px;
+    border-top-left-radius: 5px 5px;
+    border-top-right-radius: 5px 5px;
+    color: #333;
+    padding: 10px;
+    font: normal normal normal 9pt/normal Monaco, 'Courier New', monospace;
+    margin: 1em 0px;
+    white-space: pre-wrap;
+} 

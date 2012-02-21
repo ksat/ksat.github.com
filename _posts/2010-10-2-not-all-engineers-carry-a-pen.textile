@@ -1,0 +1,11 @@
+---
+layout: post
+title: Not all engineers carry a pen
+permalink: /not-all-engineers-carry-a-pen
+---
+
+h1. Not all engineers carry a pen
+
+If you are a software engineer in India you know this problem. There is a huge difference between the previous generation “Engineers” and the new ones. Leading that difference is the thought that Engineers always carry a pen. Laptops and smart phones have spoiled me to the point that I don’t think of taking a pen anymore. Add the fact that I am usually careless.
+
+I’ve never felt guilty about it. That is, Until I meet one of the previous generation Engineers. They could just kill you will a single “What? Don’t have a pen?”
