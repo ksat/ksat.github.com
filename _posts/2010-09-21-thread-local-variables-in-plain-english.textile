@@ -1,0 +1,47 @@
+---
+layout: post
+title: Thread Local variables in plain English
+permalink: /thread-local-variables-in-plain-english
+---
+
+h1. Thread Local variables in plain English
+
+Thread Locals is a little less known feature in Java.  If you din’t know about Thread Local variables, or din’t care yet, here’s a basic tutorial. (If you did know, this article is pretty basic and you can skip)
+
+Thread locals are used, simply, when you want hold values for a variable per thread. Now, why would you need that? You need that To Pass values down to methods without explicitly passing them as method arguments. Think about that line for a second. Two questions can come to your mind
+
+* What’s the problem with passing them as methods arguments? A few.  First, the method that requires the parameter can be well down the chain and each intermediate method has to be “dirtly” modified to get the value to the target method. second, in some cases, you wouldn’t even have control on modifying the intermediate methods if the code flow passes through a 3rd party library and finally comes back to your code.
+* What’s the problem with just storing it as an instance variable? Turns out that it’s not thread safe. What the heck is thread safety here? Its when another thread comes and mysteriously modifies the value before it reaches the target method.
+
+Consider this example. You want to write some utility code that your team should be able to use like this:
+
+<pre>Transaction.init( //initializes a "db connection"
+  new Runnable(){
+     public void run(){
+      Transaction.execute("update stmt"); //uses the connection
+      Transaction.execute("update stmt");
+     }
+  }
+);
+</pre>
+
+You need to write the “Transaction” class. This class initializes a db “connection” object before calling the run method and closes it after run() finishes executing. So the question is, where do you “store” the connection object that’s initalized in the constructor and “use” it in the “execute” method?
+
+This demonstrates 2 problems, first you might not want to pass the connection object around just for the heck of thread safety. Besides you don’t have any control on the Runnable classes’s run() method anyway, to add a parameter there.
+
+So you use thread locals. The init() method intializes the connection and stores it on ThreadLocal variable, then calls the run() method. The executeQuery() method takes the value from the ThreadLocal variable and uses it to execute query. After calling the run() method the we “commit” the connection if there were no exceptions or rollback if there were and closes the connection in a finally block. Simple?
+
+Now that you know what are ThreadLocals, Here is a snippet how to use ThreadLocals. You can download a source code of Transaction.java over here, if you want to have a look at the code.
+
+<pre>  //To create a thread local variable
+  static ThreadLocal<Connection> threadLocal
+                          = new ThreadLocal<Connection>(); 
+
+  //To set the connection object in the init method
+  threadLocal.set(con);
+
+  //To get the connection object in the execute method
+  Connection con = threadLocal.get();
+</pre>
+
+..And ofcourse ThreadLocals are not without problems. Threre are some known performance issues, the code becomes difficult to test and Just won’t work if your target method is called in another thread.
