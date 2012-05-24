@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A plain English introduction to CAP theorem
+permalink: /a-plain-english-introduction-to-cap-theorem
 ---
 
 h1. A plain english introduction to CAP Theorem

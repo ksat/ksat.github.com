@@ -16,15 +16,11 @@ html, body {
 }
 
 body {
-  background-color: white;
-  /*
-  font: 13.34px helvetica, arial, clean, sans-serif;
-  *font-size: small;
-  */
-  font-family: Arial, Helvetica, sans-serif;
+  background:#fcfcfc;
+  font-family: 'pt sans',arial,helvetica,sans-serif !important;
   text-align: center;
   color: #424037;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,7 +37,7 @@ h1 {
 }
 
 h2 {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 p {
@@ -52,13 +48,29 @@ a {
   color: #00a;
 }
 
+#post a {
+  text-decoration: none;
+  color:  #BC7134;
+}
+
+.dsq-comment-header a{
+  color: #666;
+}
+
+#dsq-global-toolbar, #dsq-footer, .dsq-trackback-url, .dsq-brlink, #dsq-account-dropdown{
+  display: none;
+}
+
+
 a:hover {
   color: black;
 }
 
+/*
 a:visited {
   color: #a0a;
 }
+*/
 
 table {
   font-size: inherit;
@@ -95,7 +107,7 @@ ul.posts {
 .site {
   font-size: 110%;
   text-align: justify;
-  width: 40em;
+  width: 45em;
   margin: 3em auto 2em auto;
   line-height: 1.5em;
 }
