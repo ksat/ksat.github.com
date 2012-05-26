@@ -4,7 +4,7 @@ title: What is Evented IO and why does it scale?
 permalink: /what-is-evented-io-and-why-it-scales
 ---
 
-h1. Why is evented IO and why does it scale? Explained in plain English.
+h1. What is evented IO and why does it scale? Explained in plain English.
 
 If you are one of them who don't "get" why eventing scales, that's ok. When I first saw evented programming, I din't get it too.  I'll try to this explain as simple as I can. But first read this line: "Evented servers usually share one thread for all requests unlike threaded servers that spawn one thread per request". Read that last line one more time. But what's the big deal with this? Nothing. Now forget that and read on.
 &nbsp;
