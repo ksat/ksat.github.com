@@ -21,4 +21,4 @@ Forward seven years, two tier is the new "cool" again. Just write your javascrip
 
 * *FireBaseBootStrap:*  Just like sql was never enough, I think we would see projects like FirebaseBootStrap or ParseBootStrap that will take away the pain of doing forms with these. Think Oracle Forms for these new services
 
-It'll be cool when these happen. 'cause by then we could turn over and discuss how n-tier is actually better again and I could use that damn ppt.
+It'll be cool when these happen. 'cause by then maybe we could turn over and discuss how n-tier is actually better again and I could use that damn ppt.
