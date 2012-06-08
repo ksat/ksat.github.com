@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>{{ page.title }} &laquo; Kaushik Sathupadi</title>
+   <link href="http://feeds.feedburner.com/ksat" rel="alternate" title="Kaushik Sathupadi" type="application/atom+xml" />
+
+   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+   <script src="/ZeroClipboard.js"></script>
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+   <link href='https://fonts.googleapis.com/css?family=PT+Sans&subset=latin' rel='stylesheet' type='text/css' /> 
+    <script>
+      $(document).ready(function(){
+           $("#pass").keyup(function(){
+                var sum = 0;
+                var val = $(this).val();
+                for(var i=0; i< val.length; i++){
+                  sum += (val.charCodeAt(i) * (i+21));
+                }
+                
+                sum = sum + val.length;
+
+                $("#girl").attr("class", "sprite-" + ((sum % 10) + 1));
+
+            });
+            
+            
+            var clip = new ZeroClipboard.Client();
+            clip.glue('copy');
+            clip.addEventListener('onMouseOver', function(){
+                clip.setText( $("#pass").val());
+            });
+            
+            $("#pass").focus(); 
+      });
+      
+    </script>
+
+    <style>
+      .sprite-8{background: url(/images/sexy.png) no-repeat;  background-position: 0 0; width: 60px; height: 114px; } 
+      .sprite-5{background: url(/images/sexy.png) no-repeat;  background-position: 0 -164px; width: 60px; height: 115px; } 
+      .sprite-4{background: url(/images/sexy.png) no-repeat;  background-position: 0 -329px; width: 60px; height: 114px; } 
+      .sprite-9{background: url(/images/sexy.png) no-repeat;  background-position: 0 -493px; width: 60px; height: 113px; } 
+      .sprite-1{background: url(/images/sexy.png) no-repeat;  background-position: 0 -656px; width: 60px; height: 113px; } 
+      .sprite-7{background: url(/images/sexy.png) no-repeat;  background-position: 0 -819px; width: 60px; height: 114px; } 
+      .sprite-6{background: url(/images/sexy.png) no-repeat;  background-position: 0 -983px; width: 60px; height: 113px; } 
+      .sprite-10{background: url(/images/sexy.png) no-repeat;  background-position: 0 -1146px; width: 60px; height: 113px; } 
+      .sprite-3{background: url(/images/sexy.png) no-repeat;  background-position: 0 -1309px; width: 60px; height: 113px; } 
+      .sprite-2{background: url(/images/sexy.png) no-repeat; background-position: 0 -1472px; width: 60px; height: 113px; } 
+    
+    </style>
+</head>
+<body>
+
+
+<div class="site">
+  <div class="title">
+    <a href="/">Kaushik Sathupadi</a>
+    <div class="description">
+      Programmer. Creator. Co-Founder.  Dad.
+    </div>
+  </div>
+ 
+
+<div id="post">
+<div style="padding-bottom:20px; text-align:right;">
+    <a href="/">See all my projects and blogs &rarr;    </a>
+</div>
+
+{{ content }}
+
+  <div style="padding-top:15px">
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="_ksat">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  </div> 
+
+  <div style="padding-top:5px; font-size:11px;">
+    Post by Kaushik Sathupadi, Founder <a href="http://www.cull.io">Cull.io</a>
+ </div>
+</div>
+
+
+
+<div style="height:5px;margin-top:20px; border-top:1px dashed #ccc">&nbsp;</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kaushiksathupadi'; // required: replace example with your forum shortname
+    //var disqus_url = 'http://ksat.me{{page.url}}/';
+   
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  <div class="footer">
+    Copyright © Kaushik Sathupadi 2009 - 2012
+
+  </div>
+</div>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18360645-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
