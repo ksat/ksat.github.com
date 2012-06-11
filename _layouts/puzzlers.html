@@ -1,0 +1,415 @@
+---
+layout: default
+---
+
+<style>
+    .question-row{
+       overflow:hidden;width:700px; 
+    }
+    .question-left{
+        float:left; display:table;width:400px;
+    }
+    .question-center{
+      float:left; width:30px; text-align:center; font-weight:bold; padding-top:100px;   
+    }
+    .question-right{
+        float:left; width:210px;padding-top:10px;border-left:1px dashed #ccc; padding-left:20px;
+        font-size:90%;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    pre.question{
+        max-width:500px;
+    }
+    pre.answer{
+        max-width:300px;margin-left:30px;
+    }
+    div.next{
+        margin-top:25px;
+    }
+
+    div.question-right > div{
+        margin-bottom:10px;
+    }
+</style>
+<script src="/jquery-1.7.2.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".show-next").click(function(){
+         var cur = parseInt($(this).parent().parent().parent().attr("id"));
+         var curElement = $("#" + cur);
+         var nextElement = $("#" + (cur + 1));
+         nextElement.insertBefore(curElement);
+         nextElement.slideDown('fast');
+         curElement.hide();
+         
+         return false;
+        });
+
+        $("#show-done").click(function(){
+            var count = 0;
+            if($("#1-3").is(":checked")){
+                count ++;
+            }
+            
+            if($("#2-2").is(":checked")){
+                count ++;
+            }
+
+            if($("#3-4").is(":checked")){
+                count ++;
+            }
+
+            if($("#4-1").is(":checked")){
+                count ++;
+            }
+
+            if($("#5-4").is(":checked")){
+                count ++;
+            }
+
+            if($("#6-3").is(":checked")){
+                count ++;
+            }
+            
+            $(this).parent().parent().parent().hide();
+            $("#right-answers").text(count);
+            if(count == 6){
+                $("#excellent").show();
+            }
+            $("#result").show();
+        });
+    });
+    
+</script>
+
+
+<div id="post">
+<div style="padding-bottom:20px; text-align:right;">
+	<a href="/">See all my projects and blogs &rarr;	</a>
+</div>
+
+  {{ content }}
+
+  <div id="result" style="display:none; margin:30px; padding:30px; border:1px dashed #ccc;text-align:center;">
+        <h1><span id="excellent" style="display:none">Excellent, </span> You got <span id="right-answers">3</span> out of 6 right</h1>
+  </div>
+  <div id="1" class="question-row">
+    <div class="question-left">
+        <h2>Question 1 :  Grandpa's ghost</h2>
+    <pre class="question">class Parent : GrandParent{
+  Void main(){
+    g := GrandParent.make
+    g.run
+  }
+}
+
+class GrandParent{
+  
+  new make(){
+    echo("A Grand parent is made")
+  }
+  
+  Void run(){
+    echo("zzzz")
+  }
+}</pre>
+    </div>
+    <div class="question-center">
+        &rarr;
+    </div>
+
+    <div class="question-right">
+        <div>
+            <input type="radio" id="1-1" name="one" checked> Will run and print 
+            <pre class="answer">A Grand parent is made
+zzzz</pre>   
+        </div>
+        <div>
+            <input type="radio" id="1-2" name="one"> Will run and print 
+            <pre class="answer">zzzz</pre>   
+        </div>
+        <div>
+            <input type="radio" id="1-3" name="one"> Will run but print something else
+        </div> 
+        <div>
+            <input type="radio" id="1-4" name="one"> Compiler Error
+        </div>
+        <div>
+            <input type="radio" id="1-5" name="one"> Runtime Error
+        </div>   
+        <div align="right" class="next">
+            <input type="button" class="show-next" value="next &rarr;"/>
+        </div>
+             
+    </div>
+
+  </div>
+  <div id="2" class="question-row" style="display:none">
+    <div class="question-left">
+        <h2>Question 2 :  Longer the arrow, Easier it is to hit</h2>
+    <pre class="question">class Arrow{
+  Log log := Log.get("arrow")
+  
+  Void main(){
+    toStr := 3
+    echo(toStr.toStr)
+    echo(toStr -> toStr)
+    echo(toStr --> toStr)
+  }
+}</pre>
+    </div>
+    <div class="question-center">
+        &rarr;
+    </div>
+
+    <div class="question-right">
+        <div>
+            <input type="radio" id="2-1" name="two" checked> Will run and print 
+            <pre class="answer">3
+3
+3
+</pre>   
+        </div>
+        <div>
+            <input type="radio" id="2-2" name="two"> Will run and print something else
+        </div>
+        <div>
+            <input type="radio" id="2-3" name="two"> Will not compile because toStr is not a valid identifier
+        </div> 
+        <div>
+            <input type="radio" id="2-4" name="two"> Will not compile because ---> is not a valid operator
+        </div>
+        <div>
+            <input type="radio" id="2-5" name="two"> Runtime Error
+        </div>   
+        <div align="right" class="next">
+            <input type="button" class="show-next" value="next &rarr;"/>
+        </div>
+             
+    </div>
+
+  </div>
+
+  <div id="3" class="question-row" style="display:none">
+    <div class="question-left">
+        <h2>Question 3 :  The Nasty Actor</h2>
+    <pre class="question">using concurrent
+
+class LogTheError{
+  Log log := Log.get("something")
+
+  Void main(){
+    a := Actor(ActorPool())|msg|{
+        try{
+           log.info("called with $msg")
+           return msg.toStr
+        }
+        catch(Err e){
+            log.err("something bad", e)
+            return "error"
+        }
+    }
+    
+    log.info(a.send(2).get)
+  }
+}</pre>
+    </div>
+    <div class="question-center">
+        &rarr;
+    </div>
+
+    <div class="question-right">
+        <div>
+            <input type="radio" id="3-1" name="three" checked> Will run and print 
+            <pre class="answer">called with 2
+2</pre>   
+        </div>
+        <div>
+            <input type="radio" id="3-2" name="three"> Will run and print something else
+        </div>
+        <div>
+            <input type="radio" id="3-3" name="three"> Will not compile
+        </div> 
+        <div>
+            <input type="radio" id="3-4" name="three"> Runtime Error
+        </div>
+        <div align="right" class="next">
+            <input type="button" class="show-next" value="next &rarr;"/>
+        </div>
+    </div>
+
+  </div>
+
+  <div id="4" class="question-row" style="display:none">
+    <div class="question-left">
+        <h2>Question 4 :  A Broken Calculator</h2>
+    <pre class="question">class Calculator{
+   Int a := 0
+   Int b := 0
+   
+   override Str toStr(){
+       return "" + (a+b)
+    }
+} 
+
+class TestCalculator{
+   Void main(){
+       c := Calculator{a := 10}
+       echo(c) 
+    }
+}</pre>
+    </div>
+    <div class="question-center">
+        &rarr;
+    </div>
+
+    <div class="question-right">
+        <div>
+            <input type="radio" id="4-1" name="four" checked> Will run and print 
+            <pre class="answer">0</pre>   
+        </div>
+        <div>
+            <input type="radio" id="4-2" name="four"> Will run and print 
+            <pre class="answer">10</pre>   
+        </div>
+        <div>
+            <input type="radio" id="4-3" name="four"> Will not compile
+        </div> 
+        <div>
+            <input type="radio" id="4-4" name="four"> Runtime Error
+        </div>
+        <div align="right" class="next">
+            <input type="button" class="show-next" value="next &rarr;"/>
+        </div>
+    </div>
+
+  </div>
+
+  <div id="5" class="question-row" style="display:none">
+    <div class="question-left">
+        <h2>Question 5 :  The magic of FFI</h2>
+    <pre class="question">using [java]java.lang::String as JString
+
+class FFI{
+  Void main(){
+    obj := JString("test")
+    Obj char := obj->charAt(0)
+    echo(char.typeof)
+  }
+}</pre>
+    </div>
+    <div class="question-center">
+        &rarr;
+    </div>
+
+    <div class="question-right">
+        <div>
+            <input type="radio" id="5-1" name="five" checked> Will run and print 
+            <pre class="answer">sys::Int</pre>   
+        </div>
+        <div>
+            <input type="radio" id="5-2" name="five"> Will run and print 
+            <pre class="answer">sys::Str</pre>   
+        </div>
+        <div>
+            <input type="radio" id="5-3" name="five"> Will not compile
+        </div> 
+        <div>
+            <input type="radio" id="5-4" name="five"> Runtime Error
+        </div>
+        <div align="right" class="next">
+            <input type="button" class="show-next" value="next &rarr;"/>
+        </div>
+    </div>
+
+  </div>
+
+  <div id="6" class="question-row" style="display:none">
+    <div class="question-left">
+        <h2>Question 6 :  The case of broken unicode</h2>
+    <pre class="question">class Unicode{
+  Void main(){
+    a := Str["2","\u0001", "3"]
+    
+    for(i:=0;i&lt;a.size; i++){
+      switch(a[i]){
+        case "2":
+          echo("2")
+          break
+        case "3":
+           echo("3")
+           break
+        default:
+           echo("UNICODE, I HATE YOU")
+           break
+      }
+    }
+    
+  }
+}</pre>
+    </div>
+    <div class="question-center">
+        &rarr;
+    </div>
+
+    <div class="question-right">
+        <div>
+            <input type="radio" id="6-1" name="six" checked> Will run and print 
+            <pre class="answer">2
+3
+UNICODE, I HATE YOU</pre>   
+        </div>
+        <div>
+            <input type="radio" id="6-2" name="six"> Will run and print 
+            <pre class="answer">2
+UNICODE, I HATE YOU
+3</pre> 
+        </div>
+        <div>
+            <input type="radio" id="6-3" name="six"> Will run, but print something else
+        </div> 
+        <div>
+            <input type="radio" id="6-4" name="six"> Will not compile
+        </div> 
+        <div>
+            <input type="radio" id="6-5" name="six"> Runtime Error
+        </div>
+
+        <div align="right" class="next">
+            <input type="button" id="show-done" value="Done &rarr;"/>
+        </div>
+    </div>
+
+  </div>
+
+  <div style="padding-top:15px">
+    <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="_ksat">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  </div> 
+
+  <div style="padding-top:5px; font-size:11px; font-weight:bold;">
+    Post by Kaushik Sathupadi, Founder <a href="http://www.cull.io">Cull.io</a> - A platform to recruit web developers by having them develop a web application
+  </div>
+
+</div>
+
+
+<div style="height:5px;margin-top:20px; border-top:1px dashed #ccc">&nbsp;</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'kaushiksathupadi'; // required: replace example with your forum shortname
+    //var disqus_url = 'http://ksat.me{{page.url}}/';
+   
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
