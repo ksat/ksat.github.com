@@ -1,0 +1,56 @@
+---
+layout: safarishot
+title: Introducing SafariShot – Wrap your screenshot on a safari running on OSX
+permalink: /safarishot-your-webpage-on-safari-on-osx
+---
+
+
+h1. SafariShot - Your screenshots like it's running on safari on OSX
+
+The world is fucked up - Only Screenshots taken on a mac is considered "Professional".
+
+If you use one of the other operating systems use this tool to showcase your website like it is running on safari on a mac.  Plus even if you have osx, you can use this to generate a full-length-safari-window screenshot (without scrollbars).
+
+Works best on firefox. File apis does not work on safari. Style your buttons and input elements. *For a demo, skip everything and click "show my screenshot"*.
+
+<div id="all-input">
+	<div  style="min-width:900px; overflow:hidden; font-size:14px;margin-top:20px;">
+		<div style="float:left; width:700px;">	
+
+			<div style="overflow:hidden;width:700px;">
+				<div class="num" style="font-size:14px;">1</div>
+				<div style="float:left; line-height:30px;">Take a screenshot of your webpage(any os) using a tool like <a href="https://addons.mozilla.org/en-US/firefox/addon/fireshot/">fireshot</a> </div>
+			</div>
+
+			<div style="overflow:hidden; margin-top:20px;">
+				<div class="num" style="font-size:14px;">2</div>
+				<div style="float:left; line-height:30px;">Choose the screenshot 
+					 <input type="file" id="files"/>
+					 <div align="left" style="padding-left:30px">&uarr;</div>
+					 <div> If you leave this blank, <a href="/images/safari/google.png" target="_blank">this default image</a> will be used instead</div>
+				</div>
+			</div>
+			<div style="overflow:hidden; margin-top:20px;">
+				<div class="num" style="font-size:14px;">3</div>
+				<div style="float:left; line-height:30px;">Type in a title and Url 
+					Page Title : <input id="page-title" type="text" class="big" value="Google"/> <br/>
+					&nbsp;&nbsp;Page Url : <input id="page-url" type="text" class="big" value="http://www.google.com" />
+				</div>
+			</div>
+			<div id="show-screenshot-div" style="overflow:hidden; margin-top:20px;padding-left:40px;">
+				<div style="float:left; padding-top:10px;padding-right:10px;" >
+					<input id="generate" type="button" value="Show my screenshot" /> 
+				     
+				</div>
+				<div style="float:left; font-size:12px;">
+					<img src="http://www.kloudo.com/res/images/home/reg_small_arrow.png" /> Go on try now, default values are on
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+
+	
+	
+</div>
+

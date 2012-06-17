@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      #myCanvas {
+        border: 1px solid #9C9898;
+      }
+    </style>
+    <script src="safarishot.js"></script>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="1000" height="1000" style="display:none;"></canvas>
+    <input type="file" accept="image/*" id="files" name="files[]" multiple />
+    <output id="list"></output>
+    
+    
+    <div id="img">
+    </div>
+  </body>
+  <script>
+    function handleFileSelect(evt) {
+      var files = evt.target.files; // FileList object
+      handleImage(files[0]);
+    }
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    
+    
+    
+    function handleImage(f){
+        var reader = new FileReader();
+        
+        reader.onload = (function(theFile) {
+                return function(e) {
+                  // Render thumbnail.
+                  myimage = new Image();
+                  myimage.src = e.target.result;
+                   
+                  myimage.onload = function() {
+                      drawEverything(myimage);
+                  }
+                    
+                };
+              })(f);
+        reader.readAsDataURL(f);
+    }
+    
+    
+    
+    function drawEverything(image){
+      var ovarallWidth = image.width + 80;
+      var overalHeight = image.height + 131;
+      document.getElementById("myCanvas").width = ovarallWidth;
+      document.getElementById("myCanvas").height = overalHeight;
+      
+      drawSafari(ovarallWidth, overalHeight, image);
+      
+    }
+    
+  </script>
+</html>
+
