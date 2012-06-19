@@ -182,12 +182,12 @@ function drawSafari() {
   context.shadowColor = "#dcdcdc";
   context.shadowOffsetX = -1;
   context.shadowOffsetY = 1;
-  context.font = "normal 13px 'Lucida Grande',Arial";
+  context.font = "normal 13px 'Lucida Grande','Lucida Sans Unicode','Helvetica Neue','Helvetica',sans-serif,Arial";
 
 
-  context.fillText(pageTitle, (totalWidth/2) - (pageTitle.length * 3), 38);
+  context.fillText(pageTitle, (totalWidth/2) - (pageTitle.length * 3), 40);
   
-  context.font = "normal 12px 'Lucida Grande',Arial";
+  context.font = "normal 12px 'Lucida Grande','Lucida Sans Unicode','Helvetica Neue','Helvetica',sans-serif,Arial";
   context.fillStyle = "#222";
   context.shadowOffsetX = 0;
   context.shadowOffsetY = 0;
