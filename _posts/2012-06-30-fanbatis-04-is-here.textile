@@ -53,3 +53,5 @@ The Filter class has been removed and you and write any custom where clause dire
 <pre>Blog[] blogs := Db.list(Blog#, "subject = #{param.subject}", ["subject", "My Blog"])</pre>
 
 Apart from these big changes, there are few performance improvements and some bug fixes.
+
+"Read Fanbatis docs":http://www.talesframework.org/fanbatis/
