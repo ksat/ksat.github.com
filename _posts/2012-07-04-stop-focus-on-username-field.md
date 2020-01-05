@@ -1,0 +1,27 @@
+---
+layout: post
+title: Dear everyone, stop setting focus on "username" field if i am already on "password" field
+permalink: /stop-setting-focus-on-username-field-on-page-load
+---
+
+Stop setting focus on “username” field if i am already on “password” field
+==========================================================================
+
+This is a problem with twitter, gmail, everything (including a few apps
+I’ve developed :).
+
+So you go to twitter.com. The page appears but still seems to be loading
+something in the background. You click on the username field and type
+the username, tab-out to the password field but just as you are typing
+the password the page loads completely and the focus is set back on
+username field. Before you understand what has happened and react, half
+of the password gets typed in the username field. This does not happen
+very often, but when it does its embarrassing especially if someone is
+sitting besides you.
+
+I imagine the solution should be simple. Set focus to “username” field
+on load, but don’t set it if
+
+-   The username field is already filled in
+-   The focus is currently on the password field  
+     

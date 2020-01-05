@@ -1,0 +1,111 @@
+---
+layout: post
+title: Why You’ll like Fantom -part 1 – The compiler
+permalink: /why-fantom-matters-1-the-compiler
+---
+
+Why You’ll like Fantom -part 1 – The compiler
+=============================================
+
+The benefit of the compiler(and static typing) has always been a topic
+of hot debate. People love it, with passion. And people hate it, with
+passion. Have you thought about what is it with the compiler that brings
+people into a love/hate relationship with it?
+
+Compilers. You can’t live with them.. You can’t live without them
+-----------------------------------------------------------------
+
+Sounds familiar? That’s because compilers are like your wife. They
+complain .. let you know when you suck. And that’s a good thing. Wait..
+is it?
+
+<img src="/images/compiler2.png" width="500" height="608" alt="(Compiler vs Your wife)!"/>
+
+What’s Jack’s solution?
+-----------------------
+
+How do you fix your wife? Here are a few suggestions
+
+-   **Make her responsible for the things she asks ‘you’ to do..**
+
+(\# “Honey, can you make sure you cut my nails every weekend”  
+(\# “Oh i am so careless baby.. Things will be way better if someone
+more dependable(looking at her) took care of all the bills”
+
+-   **Agree on signals that indicate the times when she is not allowed
+    to complain**
+
+(\# “When I am wearing a red T-shirt .. it means i am in a really bad
+mood, so you are not allowed to complain. Other days you can.”
+
+ 
+
+Like that’s going to happen
+---------------------------
+
+Well who are we kidding. that’s not going to happen. In your dreams
+Jack. But James might try his luck with the Fantom Compiler..
+
+Make the compiler do more work.
+-------------------------------
+
+Here are a few examples
+
+-   ” Hey compiler can you try and figure out the type when I don’t type
+    it”  
+    and then do a..
+
+pre. a := 3
+
+instead of
+
+pre. Int a := 3
+
+-   “All those +s drive me crazy, so can you handle String interpolation
+    for me”?
+
+and then do a..
+
+pre. s = “My color is $color and My age is $age”
+
+instead of
+
+pre. String s = “My color is ” + color + " and My age is " + age
+
+-   “And BTW.. i don’t really like putting semi colons .. so put them
+    for me at the end of each line and can you handle that multi line
+    strings for me too..”  
+    And so the list can go on..  
+     
+
+Agree on signals that indicate the times when the compiler is not allowed to complain
+-------------------------------------------------------------------------------------
+
+\*( “When I use a ‘-\>’ instead of “.” to call a method, just don’t
+check if the method actually exists or do any sort of type checking”.
+check an example
+
+pre. blogOrAnimal := getEitherABlogOrAnAnimalFromDatabase()  
+blogOrAnimal-\>save
+
+“getEitherABlogOrAnAnimalFromDatabase” returns either a blog or an
+animal. Both of them have a save method. You just want this time, this
+one time, to treat them equally and call the freaking save method
+instead of “ifs-and-casts-and-then-calls”
+
+\*( ” When I declare a type, I mean I want that type, don’t need to me
+cast”. so..
+
+pre. Blog b := getObject(“blog”)
+
+instead of..
+
+pre. Blog b := (Blog) getObject(“blog”)
+
+(assuming that getObject is “declared” to return “Object” but returns
+the correct type of object depending on a parameter at runtime)
+
+So .. that’s the thing about the Fantom compiler. It provides the
+benefits of static type checking but shuts itself up when you ask it to.
+Go to [fantom.org](http://fantom.org) to learn more.. or [play with it
+online](http://www.fanzy.net)

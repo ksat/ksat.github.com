@@ -1,0 +1,17 @@
+---
+layout: post
+title: Its the same.. only different
+permalink: /win7-its-the-same-only-different
+---
+
+Its the same.. only different
+=============================
+
+Upgraded to windows 7 some time back. Whenever you do upgrade to a new
+operating system, the new user interface gives you a high.
+
+The win 7 UI, is pretty neat especially considering that I am moving
+from XP.. Until I open one of the inner dialogs. like “Internet
+options”. Those just look the same! except a translucent title bar. I
+feel cheated. :(. Oh wait, there are other things apart from UI, I
+should see before I declare that. or Should I?

@@ -1,0 +1,67 @@
+---
+layout: post
+title: Fanbatis 0.4 is here!
+permalink: /fanbatis-0-4-is-here
+---
+
+Introducing Fanbatis 0.4
+========================
+
+The biggest change is on Sqlmaps which have been enhanced to make the
+DSLs do more work.
+
+This was the old way to query
+
+    class BlogSqlMap : SqlMap{
+      @Select
+      Blog getBlogBySubject(Str subject){
+        one(sql<|
+            select * from blog where subject = #{subject}
+        |>)
+      }
+    }
+
+Here’s the new and sexy way
+
+    class BlogSql {
+      Blog getBlogBySubject(Str subject){
+        S<|
+           select * from blog where subject = #{subject}
+        |>
+      }
+    }
+
+-   There is no need to extend SqlMap
+-   There is no need to mark your methods `Select (or `Insert,
+    `Update or `Delete)
+-   Methods can be static or not
+-   There is no need to call methods like one(), list(), insert(),
+    delete()
+
+If you want you can embed sqlmaps directly in the domain object, for
+eg.,
+
+    class Blog{
+      ...
+      static Blog findById(Int id){S<|
+          select * from blog where id = #{id}
+      |>}
+    }
+
+and call it like
+
+    Blog.findById(1)
+
+Note: This however might or might not be a good idea. If for example you
+are using fanquery and Fantom on client, this might not be really good
+idea since these methods doesn’t make much sense in Javascript.
+
+The Filter class has been removed and you and write any custom where
+clause directly in the Db.one or Db.list methods. eg
+
+    Blog[] blogs := Db.list(Blog#, "subject = #{param.subject}", ["subject", "My Blog"])
+
+Apart from these big changes, there are few performance improvements and
+some bug fixes.
+
+[Read Fanbatis docs](http://www.talesframework.org/fanbatis/)
