@@ -22,15 +22,15 @@ venture that will put your talent to use? The more you think about it,
 the more you like it. In fact you even come up with a news paper ad
 which explains your idea
 
-pre. Remembrance Inc! - Never forget, even without remembering!  
-Ever felt bad that you forget so much? Don’t worry. Help is just a phone
-away!  
-When you need to remember something, just call 555—55-REMEM and tell us
-what you need to remember. For eg., call us and let us know of your
-boss’s phone number, and forget to remember it. when you need to know it
-back.. call back the same number\[(555)—55-REMEM \] and we’ll tell you
-what’s your boss’s phone number.  
-Charges : only $0.1 per request
+    Remembrance Inc! - Never forget, even without remembering!  
+    Ever felt bad that you forget so much? Don’t worry. Help is just a phone
+    away!  
+    When you need to remember something, just call 555—55-REMEM and tell us
+    what you need to remember. For eg., call us and let us know of your
+    boss’s phone number, and forget to remember it. when you need to know it
+    back.. call back the same number\[(555)—55-REMEM \] and we’ll tell you
+    what’s your boss’s phone number.  
+    Charges : only $0.1 per request
 
 So, your typical phone conversation will look like this:
 
