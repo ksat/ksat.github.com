@@ -1,0 +1,9 @@
+---
+layout: post
+title: Jargon’s a Jargon
+permalink: /jargons-a-jargon
+---
+
+h1. Jargon’s a Jargon
+
+I din’t know the word Jargon for a long time. Wikipedia says Jargon is .. “any talk or writing that one does not understand.” So the word Jargon is a jargon for me. Is there any other simpler word that is less of a Jargon than Jargon still meaning jargon?

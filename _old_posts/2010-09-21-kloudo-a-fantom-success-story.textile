@@ -1,0 +1,23 @@
+---
+layout: post
+title: Kloudo.com – A Fantom Success story
+permalink: /kloudo-a-fantom-success-story
+---
+
+h1. Kloudo.com – A Fantom Success story
+
+Well, You don’t know me. I am sure. So, Hey! I am kaushik.  Programmer. I usually freelance.   And this is my first blog.
+
+Yesterday we launched "kloudo.com":http://www.kloudo.com – A Integrated business organizer. Obviously I think it’s pretty awesome. That’s not the point of this post, however.
+
+What better way to start to blog than by thanking the open source projects that has helped you to get your things done.  I’ve my share of list to thank. Including Mysql, redis, ngnix  and fantom. Yeah "Fantom":http://www.fantom.org.
+
+Kloudo.com was built mostly-completely written on the Fantom programming language. Ofcourse since its pretty easy to use Java libraries from inside fantom, I’ve done that too.
+
+Why Fantom?  fantom.org has a "page on that":http://fantom.org/doc/docIntro/WhyFantom.html .And one more point they missed over there. The developers(Brian and Andy) are pretty damn amazing.  So is the community.  The language is beautiful. APIs are elegant.  Has Actors. Ruby like closures . Runs on JVM. And very attractive to a Java Programmers.
+
+So the point of this post, mostly, is to let you know, if you din’t know already, that Fantom is mature and usable right now. I made an entire product on it and loved every second programming with it. So will you. So go give it a try.
+
+Hopefully, I will write more about my experiences with Fantom.
+
+And, Andy,Brian, tactics, tcolar,  xored and every one else in the Fantom community, if you are reading this. Thank You! You made my life easier and fun and so you will for a lot of other people. Love you guys and will try to contribute back in ways that I can

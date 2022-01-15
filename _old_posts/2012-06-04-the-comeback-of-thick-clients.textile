@@ -1,0 +1,24 @@
+---
+layout: post
+title: Parse, Firebase and the comeback of Two Tier
+permalink: /comeback-of-thick-clients
+---
+
+h1. Parse, Firebase and the comeback of Two-Tier
+
+
+At my first company, our Job was to migrate applications developed in Oracle Forms(client-server) to Java.  To me it was always confusing why such a migration is necessary.  If your application mostly just baby-sits the database(and certainly our application did) Oracle Forms looked  like the simplest possible solution.  All the code remained in one place. The client talked to the database using Sql. Pl/Sql if you need if and for loops. To avoid latency, you write optimized queries and in some cases write a stored procedure. This looked much simpler than dabbling with server configurations, writing servlets, deploying ejbs, doing code that oracle forms gives for free and then `still write optimized queries and in some cases write a stored procedure`.
+
+I discussed this with my Project lead and he forwarded me a presentation that was used by the company to persuade clients to migrate. The presentation mostly talked about how n-tier-architecture was cooler. How it allows you to make modular, more maintainable, more secure and better performing apps. I stored that PPT thinking that it'll be useful one day if I start my own company that'll be into such migration projects.
+
+Forward seven years, two tier is the new "cool" again. Just write your javascript, Store the data in "firebase":http://www.firebase.com/ or "parse":https://parse.com/docs/js_guide and forget Servers. Now, Since old is the new new, it might be interesting to take the old problems again and provide new solutions. If you are looknig for ideas these might be interesting:
+
+* *Stored Javascript:* To reduce latency, you can for example think of a stored-java-script that will reside near parse or firebase servers and execute a set of queries.
+
+* *Bring your own Database Schemes:* If I am just writing the javascript for my app I might as well ask the customers to bring their own database. This would be as simple as creating a firebase/parse account and giving me the API key. And very cheap since all these services provide a "free-to-start package" that will be good enough for most customers. That can bring in the requirement of more services. For examples a service that backs-up the data from firebase/parse or  a service that migrates objects from old schema to new one.
+
+* *Standard Javascript Query Language:* How about a service that will provide "one standard set of Apis":http://xkcd.com/927/ to query different services? 
+
+* *FireBaseBootStrap:*  Just like sql was never enough, I think we would see projects like FirebaseBootStrap or ParseBootStrap that will take away the pain of doing forms with these. Think Oracle Forms for these new services
+
+It'll be cool when these happen. 'cause by then maybe we could turn over and discuss how n-tier is actually better again and I could use that damn ppt.
